@@ -1,4 +1,5 @@
 # Arquitectura_Computador
+Por: Juan Esteban Garzón Tinjaca y Felipe Andres Garrido Flores
 Codigos del proyecto N°2 y N°3 en binario
 
 - A pasar la carrera
