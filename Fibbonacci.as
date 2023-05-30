@@ -1,0 +1,160 @@
+INT_LOOP:
+Load_size:
+0b00011000	;MOV  ACC, CTE
+0b00000111	;SIZE     
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+
+neg_size: 
+0b00111000	;Inv ACC
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001	;0x01
+0b01001000	;ADD ACC, A
+0b00010000	;Mov, A, ACC
+          
+load_it: 
+0b00011000	;MOV  ACC, CTE
+0b00000000   ;ITERATOR
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b01001000	;ADD ACC, A
+          
+loop_test: 
+0b01100000	;JN hacia ADD_ACUMM
+0b01010000	;IJMP CTE hacia END_LOOP       
+
+ADD_ACUMM:
+0b00011000	;MOV  ACC, CTE   
+
+calc_Fib:  
+0b00000000   ;T1
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001   ;ARRAY          
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001	;ITERATOR
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b01001000	;ADD ACC, A
+ 
+Calc_sum:
+0b00011000	;MOV  ACC, CTE
+0b00000000   ;T1
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001   ;T2
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b01001000	;ADD ACC, A
+0b00010000	;Mov, A, ACC
+            
+updt_accum: 
+0b00011000	;MOV  ACC, CTE
+0b00000000   ;ACCUM           
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00110000	;MOV [DPTR], ACC
+            
+updt_t1:    
+0b00011000	;MOV  ACC, CTE
+0b00000001   ;T2
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001   ;T2
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00001000	;MOV ACC, A
+0b00110000	;MOV [DPTR], ACC
+           
+Updt_t2:
+0b00011000	;MOV  ACC, CTE
+0b00000000   ;ACCUM
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001   ;T2           
+0b00100000	;Mov, ACC, [DPTR]
+0b00001000	;MOV ACC, A
+0b00110000	;MOV [DPTR], ACC
+            
+Inc_it:
+0b00011000	;MOV  ACC, CTE
+0b00000001	;ITERATOR
+0b00101000	;Mov DPTR, ACC
+0b00100000	;Mov, ACC, [DPTR]
+0b00010000	;Mov, A, ACC
+0b00011000	;MOV  ACC, CTE
+0b00000001	;0x01	
+0b01001000	;ADD ACC, A
+0b00110000	;MOV [DPTR], ACC
+0b01010000	;JMP hacia INIT_LOOP   
+
+END_LOOP:
+
+ITERATOR: 0x01
+SIZE: 0x50
+TAMANIO:0x20
+ACCUM: 0x00
+T1:0x00
+T2:0x01
+ARRAY: 0x01
+       0x02
+       0x03
+       0x04
+       0x05
+       0x06
+       0x07
+       0x08
+       0x09
+       0x10
+       0x11
+       0x12
+       0x13
+       0x14
+       0x15
+       0x16
+       0x17
+       0x18
+       0x19
+       0x20
+       0x21
+       0x22
+       0x23
+       0x24
+       0x25
+       0x26
+       0x27
+       0x28
+       0x29
+       0x30
+       0x31
+       0x32
+       0x33
+       0x34
+       0x35
+       0x36
+       0x37
+       0x38
+       0x39
+       0x40
+       0x41
+       0x42
+       0x43
+       0x44
+       0x45
+       0x46
+       0x47
+       0x48
+       0x49
+       0x50
